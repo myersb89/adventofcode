@@ -1,5 +1,4 @@
-
-let testinput: string = `4514
+const testinput: string = `4514
 8009
 6703
 1811
@@ -2257,19 +2256,23 @@ let testinput: string = `4514
 1663
 4246
 1331
-3420`
+3420`;
 
-let theElf: number = 0
-let valueMax: number = 0
-testinput.split('')
+let totalCalElfs: Array<number> = [] 
+
 testinput.split('\n\n').forEach(function (elf, index){
     let curVal: number = elf.split('\n').reduce(( a: number, b: string ) => {
         return a + parseInt(b);
     }, 0);
-    if (curVal > valueMax ){
-        valueMax = curVal
-        theElf = index + 1
-    }
+    totalCalElfs.push(curVal)
 });
-console.log(theElf)
-console.log(valueMax)
+
+totalCalElfs.sort()
+console.log(totalCalElfs)
+console.log("max")
+console.log(totalCalElfs[totalCalElfs.length - 1])
+console.log("max 3")
+console.log(totalCalElfs.slice(-3).reduce((a, b) => {
+    return a+b
+    })
+)
