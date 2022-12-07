@@ -35,9 +35,9 @@ let score = 0
 testInput.split('\n').forEach(val => score = score + conditionsPt2[val])
 console.log(score)
 
-getInput(2, function(result) {
+getInput(2, function(day2Input) {
     let score = 0
-    result.split('\n').filter(line => line.trim() !== '').forEach(val => {
+    day2Input.split('\n').filter(line => line.trim() !== '').forEach(val => {
         score = score + conditionsPt2[val.replace(/\s/g, "")]
     })
     console.log(score)
