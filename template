@@ -1,0 +1,11 @@
+import { getInput } from './helpers';
+
+const testInput = ``
+
+function solution(input){
+    console.log(input)
+}
+
+solution(testInput)
+
+getInput(4, solution)
